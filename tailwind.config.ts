@@ -19,6 +19,18 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Ocean theme colors
+        ocean: {
+          deep: "hsl(var(--ocean-deep))",
+          medium: "hsl(var(--ocean-medium))",
+          shallow: "hsl(var(--ocean-shallow))",
+          surface: "hsl(var(--ocean-surface))",
+        },
+        coral: {
+          warm: "hsl(var(--coral-warm))",
+          cool: "hsl(var(--coral-cool))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -80,10 +92,27 @@ export default {
             height: "0",
           },
         },
+        wave: {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-10px) rotate(2deg)" },
+        },
+        bubble: {
+          "0%": { transform: "translateY(0) scale(1)", opacity: "0.6" },
+          "50%": { opacity: "1" },
+          "100%": { transform: "translateY(-20px) scale(1.1)", opacity: "0" },
+        },
+        "data-flow": {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { transform: "translateX(100%)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        wave: "wave 6s ease-in-out infinite",
+        bubble: "bubble 4s ease-in-out infinite",
+        "data-flow": "data-flow 3s ease-in-out infinite",
       },
     },
   },
