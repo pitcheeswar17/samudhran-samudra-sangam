@@ -21,11 +21,14 @@ const AppContent = () => {
     );
   }
 
-  if (!user) {
-    return <LoginForm />;
-  }
-
-  return <MainApp />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={user ? <MainApp /> : <LoginForm />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 const App = () => {
@@ -36,15 +39,9 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <AuthContext.Provider value={auth}>
-            <Routes>
-              <Route path="/" element={<AppContent />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AuthContext.Provider>
-        </BrowserRouter>
+        <AuthContext.Provider value={auth}>
+          <AppContent />
+        </AuthContext.Provider>
       </TooltipProvider>
     </QueryClientProvider>
   );
