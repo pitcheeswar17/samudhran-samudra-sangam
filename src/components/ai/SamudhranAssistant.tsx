@@ -180,6 +180,7 @@ export const SamudhranAssistant = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMinimized(!isMinimized)}
+              className="hover:bg-ocean-surface/20"
             >
               {isMinimized ? <Maximize2 className="w-4 h-4" /> : <Minimize2 className="w-4 h-4" />}
             </Button>
@@ -187,6 +188,7 @@ export const SamudhranAssistant = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
+              className="hover:bg-destructive/20 hover:text-destructive"
             >
               <X className="w-4 h-4" />
             </Button>

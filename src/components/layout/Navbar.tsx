@@ -130,7 +130,10 @@ export const Navbar = () => {
                   Settings
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={logout} className="text-destructive">
+                <DropdownMenuItem 
+                  onClick={logout} 
+                  className="text-destructive focus:text-destructive hover:bg-destructive/10 focus:bg-destructive/10"
+                >
                   <LogOut className="w-4 h-4 mr-2" />
                   Sign Out
                 </DropdownMenuItem>
